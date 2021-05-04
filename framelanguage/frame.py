@@ -9,7 +9,7 @@ class Frame():
 
 
     def __repr__(self):
-        return f"""{type(self).__name__}("{self.name}",{self.slots})"""
+        return f"{type(self).__name__}('{self.name}',{self.slots})"
 
 
     def setName(self, name):
@@ -57,4 +57,4 @@ class Frame():
 
     @classmethod
     def from_dict(cls, aDict):
-        return Frame(aDict['name'], aDict['slots'])
+        return Frame(aDict['name'], { k: Slot.from_dict(v) for k, v in aDict['slots'] })

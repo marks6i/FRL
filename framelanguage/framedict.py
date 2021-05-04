@@ -10,7 +10,7 @@ class FrameDict():
 
 
     def __repr__(self):
-        return f"""{type(self).__name__}("{self.name}",{self.frames})"""
+        return f"{type(self).__name__}('{self.name}',{self.frames})"
 
 
     def set(self, frame, slot, facet, value):
@@ -58,4 +58,4 @@ class FrameDict():
 
     @classmethod
     def from_dict(cls, aDict):
-        return FrameDict(aDict['name'], aDict['frames'])
+        return FrameDict(aDict['name'], { k: Frame.from_dict(v) for k, v in aDict['frames'] })
