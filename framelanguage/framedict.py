@@ -26,7 +26,7 @@ class FrameDict():
         return self.set(frame, slot, '__value__', value)
 
 
-    def setAKO(self, frame, value):
+    def setAKO(self, frame, slot, value):
         return self.set(frame, slot, '__AKO__', value)
 
 
